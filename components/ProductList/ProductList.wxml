@@ -1,0 +1,14 @@
+<view>
+<view class="header">
+  <view class="nav">
+    <view class="s_title {{num == index ? 'active' : ''}}" wx:for="{{seckills}}" bindtap="toggle" wx:key='index'>
+      <view class="item_desc" data-num="{{index}}">{{item.timeDesc}}</view>
+      <view class="item_text">{{item.statusDesc}}</view>
+    </view>
+  </view>
+</view>
+<!-- <ProductList sale-list="{{saleList}}" proa='abc'></ProductList> -->
+<view class="children">
+<slot></slot>
+</view>
+</view>

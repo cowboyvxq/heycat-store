@@ -1,0 +1,326 @@
+<view class="header">
+  <view class="nav">
+    <view class="s_title {{num == index ? 'active' : ''}}" wx:for="{{seckills}}" bindtap="toggle" wx:key='index'>
+      <view class="item_desc" data-num="{{index}}">{{item.timeDesc}}</view>
+      <view class="item_text" data-num="{{index}}">{{item.statusDesc}}</view>
+    </view>
+  </view>
+</view>
+<!-- 1 -->
+<view class="content" wx:if="{{num === 0}}">
+  <view wx:for="{{saleList}}" wx:key='iid' class="goods_main" bindtap="goDetails1">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 2 -->
+<view class="content" wx:if="{{num === 1}}">
+  <view wx:for="{{seckillList2}}" wx:key='iid' class="goods_main" bindtap="goDetails2">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 3 -->
+<view class="content" wx:if="{{num === 2}}">
+  <view wx:for="{{seckillList3}}" wx:key='iid' class="goods_main" bindtap="goDetails1">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 4 -->
+<view class="content" wx:if="{{num === 3}}">
+  <view wx:for="{{seckillList4}}" wx:key='iid' class="goods_main" bindtap="goDetails2">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 5 -->
+<view class="content" wx:if="{{num === 4}}">
+  <view wx:for="{{seckillList5}}" wx:key='iid' class="goods_main" bindtap="goDetails1">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 6 -->
+<view class="content" wx:if="{{num === 5}}">
+  <view wx:for="{{seckillList6}}" wx:key='iid' class="goods_main" bindtap="goDetails2">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 7 -->
+<view class="content" wx:if="{{num === 6}}">
+  <view wx:for="{{seckillList7}}" wx:key='iid' class="goods_main" bindtap="goDetails2">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 8 -->
+<view class="content" wx:if="{{num === 7}}">
+  <view wx:for="{{seckillList8}}" wx:key='iid' class="goods_main" bindtap="goDetails1">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 9 -->
+<view class="content" wx:if="{{num === 8}}">
+  <view wx:for="{{seckillList9}}" wx:key='iid' class="goods_main" bindtap="goDetails2">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+  </view>
+</view>
+<!-- 10 -->
+<view class="content" wx:if="{{num === 9}}">
+  <view wx:for="{{seckillList10}}" wx:key='iid' class="goods_main">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 11 -->
+<view class="content" wx:if="{{num === 10}}">
+  <view wx:for="{{seckillList11}}" wx:key='iid' class="goods_main" bindtap="goDetails2">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 12 -->
+<view class="content" wx:if="{{num === 11}}">
+  <view wx:for="{{seckillList12}}" wx:key='iid' class="goods_main" bindtap="goDetails1">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 13 -->
+<view class="content" wx:if="{{num === 12}}">
+  <view wx:for="{{seckillList13}}" wx:key='iid' class="goods_main" bindtap="goDetails2">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 14 -->
+<view class="content" wx:if="{{num === 13}}">
+  <view wx:for="{{seckillList14}}" wx:key='iid' class="goods_main" bindtap="goDetails2">
+    <view class="left">
+      <image src="{{item.image}}"></image>
+    </view>
+    <view class="right">
+      <view class="wrap_title">{{item.title}}</view>
+      <view class="progress">
+        <image class="p_image" src='/image/progress.png' style="width: {{item.progressBar*100 + '%'}}"></image>
+        <text class="hisSales" wx:if="{{item.hisSales}}">仅剩{{item.hisSales}}件</text>
+        <text class="hisSales" wx:else>已抢完</text>
+      </view>
+      <view class="r_price">￥{{item.salePrice}}</view>
+      <view class="hotsale" wx:if="{{item.sale90days > 5}}">最近3天热卖{{item.sale90days + 800}}件</view>
+      <view class='go_shop'>去抢购</view>
+    </view>
+    <view class="tag_img">
+    <image wx:if="item.tagImg" src="{{item.tagImg}}"></image>
+    <image wx:else src="{{item.tagImg2}}"></image>
+    </view>
+  </view>
+</view>

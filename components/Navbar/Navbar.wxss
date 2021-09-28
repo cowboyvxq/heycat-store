@@ -1,0 +1,13 @@
+/* components/Navbar.wxss */
+.navbar {
+  width: 100vw;
+  height: 100rpx;
+}
+.navbar .nav_fixed {
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .nav_fixed .tab_items {
+  text-align: center;
+  font-size: 36rpx;
+}

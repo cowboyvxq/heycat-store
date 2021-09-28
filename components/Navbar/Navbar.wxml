@@ -1,0 +1,14 @@
+<!--components/Navbar.wxml-->
+<view class="navbar">
+<view class="nav_fixed">
+  <view class="tab_items" 
+  wx:for="{{navbars}}"
+  wx:key='index'
+  bindtap="navTap" 
+  >{{item.title}}</view>
+  <view>878yihnkd</view>
+</view>
+</view>
+<view class="content">
+  <slot></slot>
+</view>

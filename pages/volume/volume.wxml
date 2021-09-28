@@ -1,0 +1,20 @@
+<!--pages/volume/volume.wxml-->
+<view class="container">
+    <navigator class="items_link" url="/pages/details/details" wx:for='{{dataList}}' wx:key='index'>
+      <view class="g_pic">
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class="goods_info">
+        <view class="g_title">
+          <text style="color:{{item1.color}}; background-color:{{item1.bgColor}};margin-right:10rpx"
+            wx:for="{{item.leftbottom_taglist}}" wx:for-item="item1" wx:for-index='index1'
+            wx:key='index1'>{{item1.content}}</text>
+          <text>{{item.title}}</text>
+        </view>
+        <view class="bot_box">
+          <text>￥{{item.price}}</text>
+          <text>{{item.cfav}}</text>
+        </view>
+      </view>
+    </navigator>
+  </view>

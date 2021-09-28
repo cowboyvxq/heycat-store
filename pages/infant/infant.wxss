@@ -1,0 +1,78 @@
+.infant {
+  background-color: #efefef;
+  padding-top: 80rpx;
+}
+.infant .navbar_fixed {
+  height: 80rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+.infant .navbar_fixed .nav_item {
+  width: 33.33%;
+  text-align: center;
+}
+.infant .container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1%;
+}
+.infant .container .goods_link {
+  width: 48%;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.infant .container .goods_link .goods_info {
+  padding: 15rpx 10rpx;
+}
+.infant .container .goods_link .goods_info .g_pic {
+  height: 460rpx;
+}
+.infant .container .goods_link .goods_info .g_pic image {
+  width: 100%;
+  height: 100%;
+}
+.infant .container .goods_link .goods_info .g_title {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #333333;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.infant .container .goods_link .goods_info .bot_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10rpx;
+  margin-top: 20rpx;
+}
+.infant .container .goods_link .goods_info .bot_box .i_price {
+  font-size: 36rpx;
+  color: #f02;
+  font-weight: bold;
+}
+.infant .container .goods_link .goods_info .bot_box .collect .collect_icon {
+  width: 28rpx;
+  height: 28rpx;
+}
+.infant .container .goods_link .goods_info .bot_box .collect text {
+  color: #b57e66;
+  margin-right: 5rpx;
+}
+.infant .container .goods_link .go_buy {
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  background-color: #ff5777;
+  text-align: center;
+  color: #fff;
+}

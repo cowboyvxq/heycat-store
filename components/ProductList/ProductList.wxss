@@ -1,0 +1,28 @@
+.header {
+  width: 100vw;
+  background-color: #ed2c48;
+  background: url('https://s10.mogucdn.com/mlcdn/c45406/200922_31i602l6ge019il6e9ealggk2kaff_1125x177.png') no-repeat left top;
+}
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+  height: 120rpx;
+}
+.header .nav .s_title {
+  text-align: center;
+  padding: 10rpx 0;
+  color: #fbd5da;
+}
+.header .nav .s_title .item_desc {
+  font-size: 36rpx;
+  line-height: 60rpx;
+}
+.header .nav .s_title .item_text {
+  width: 170rpx;
+  font-size: 24rpx;
+}
+.header .nav .s_title.active {
+  color: #fff;
+  font-weight: 600;
+}

@@ -1,0 +1,84 @@
+<!--pages/infant/infant.wxml-->
+<view class="infant">
+  <view class="navbar_fixed">
+    <Tabs Tabs="{{Tabs}}" bindtabsChange="tabsItemChange"></Tabs>
+  </view>
+<block wx:if="{{Tabs[0].isActive===true}}">
+  <view class="container">
+    <navigator url="/pages/details/details" class="goods_link" wx:for='{{dataList}}' wx:key='index'>
+      <view class="g_pic">
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class="goods_info">
+        <view class="g_title">
+          <text style="color:{{item1.color}}; background-color:{{item1.bgColor}};margin-right:10rpx"
+            wx:for="{{item.leftbottom_taglist}}" wx:for-item="item1" wx:for-index='index1'
+            wx:key='index1'>{{item1.content}}</text>
+          <text>{{item.title}}</text>
+        </view>
+        <view class="bot_box">
+          <text class="i_price">￥{{item.price}}</text>
+          <view class="collect">
+          <text>{{item.cfav}}</text>
+          <image class="collect_icon" src="../../icons/collect.png"></image>
+          </view>
+        </view>
+      </view>
+    <view class="go_buy">立即购买</view>
+    </navigator>
+  </view>
+</block>
+
+<block wx:if="{{Tabs[1].isActive===true}}">
+  <view class="container">
+    <navigator class="goods_link" url="/pages/details2/details2" wx:for='{{volumeList}}' wx:key='index'>
+      <view class="g_pic">
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class="goods_info">
+        <view class="g_title">
+          <text style="color:{{item1.color}}; background-color:{{item1.bgColor}};margin-right:10rpx"
+            wx:for="{{item.leftbottom_taglist}}" wx:for-item="item1" wx:for-index='index1'
+            wx:key='index1'>{{item1.content}}</text>
+          <text>{{item.title}}</text>
+        </view>
+        <view class="bot_box">
+          <text class="i_price">￥{{item.price}}</text>
+          <view class="collect">
+          <text>{{item.cfav}}</text>
+          <image class="collect_icon" src="../../icons/collect.png"></image>
+          </view>
+        </view>
+      </view>
+    <view class="go_buy">立即购买</view>
+    </navigator>
+  </view>
+</block>
+
+<block wx:if="{{Tabs[2].isActive===true}}">
+  <view class="container">
+    <navigator class="goods_link" url="/pages/details/details" wx:for='{{newsList}}' wx:key='index'>
+      <view class="g_pic">
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class="goods_info">
+        <view class="g_title">
+          <text style="color:{{item1.color}}; background-color:{{item1.bgColor}};margin-right:10rpx"
+            wx:for="{{item.leftbottom_taglist}}" wx:for-item="item1" wx:for-index='index1'
+            wx:key='index1'>{{item1.content}}</text>
+          <text>{{item.title}}</text>
+        </view>
+        <view class="bot_box">
+          <text class="i_price">￥{{item.price}}</text>
+          <view class="collect">
+          <text>{{item.cfav}}</text>
+          <image class="collect_icon" src="../../icons/collect.png"></image>
+          </view>
+        </view>
+      </view>
+    <view class="go_buy">立即购买</view>
+    </navigator>
+  </view>
+</block>
+  
+</view>

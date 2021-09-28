@@ -1,0 +1,29 @@
+.search_input {
+  height: 80rpx;
+  padding: 10rpx;
+  background-color: #f5687f;
+}
+.search_input navigator {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 35rpx;
+  color: #666;
+  margin: 0 auto;
+}
+.search_input navigator .search_icons {
+  height: 100%;
+  width: 300rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a8a6a6;
+}
+.search_input navigator .search_icons image {
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 5rpx;
+}

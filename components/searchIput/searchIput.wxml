@@ -1,0 +1,8 @@
+<view class="search_input">
+	<navigator url="/pages/search/search" open-type="navigate"> 
+	<view class="search_icons">
+	<image src='../../icons/搜索.png'></image>
+	<text>搜索</text> 
+	</view>
+	</navigator>
+</view>

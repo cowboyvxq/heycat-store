@@ -1,0 +1,25 @@
+{
+  "name": "wechat_shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BestMao/WeChat_shop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BestMao/WeChat_shop/issues"
+  },
+  "homepage": "https://github.com/BestMao/WeChat_shop#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.8.7"
+  }
+}

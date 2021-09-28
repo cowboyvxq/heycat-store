@@ -1,0 +1,75 @@
+<!-- 轮播图 -->
+<view class="detail_swiper">
+  <swiper autoplay indicator-dots circular>
+    <swiper-item wx:for="{{goodInfo.pics}}" wx:key="pics_id" bindtap='handlePrevewImage' data-url='{{item.pics_mid}}'>
+      <image mode="widthFix" src="{{item.pics_mid}}" />
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 详情 -->
+<view class="detail_info">
+  <div class="info_center">
+    <view class="info_price">¥{{goodInfo.goods_price}}</view>
+    <view class="sales_volume">
+      <text> 月销量：</text>
+      <text class="volume">{{goodInfo.volume}}</text>
+    </view>
+  </div>
+  <view class="info_detail">
+    <view class="info_name">{{goodInfo.goods_name}}</view>
+    <view class="info_collect" bindtap="collectHandle">
+      <text class="iconfont {{isCollect?'icon-shoucang1':'icon-shoucang'}}"></text>
+      <view class="collect_text">收藏</view>
+    </view>
+  </view>
+</view>
+<view class="merchant_info">  
+  <view class="left_logo">
+    <image class="logo_pic" src='https://s11.mogucdn.com/b7/avatar/150809/1mv984_ie2tmn3bg4zweolfgizdambqhayde_200x200.jpg'></image>
+  </view>
+  <view class="right_info">
+    <view class="r_top">
+      <text class="store_name">舒感时尚</text>
+      <text class="go_store">进店 ></text>
+    </view>
+    <view class="r_center">
+      <view class="star">
+        <image src=""></image>
+        <image src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png"></image>
+        <image src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png"></image>
+        <image src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png"></image>
+      </view>
+      <view class="total">在架商品205</view>
+    </view>
+    <view class="r_bot">
+    <text>3375人关注</text>
+    <text>累计销量3.5万+</text>
+    <text>5年金招牌</text>
+    </view>
+  </view>
+</view>
+<view class="detail_more">
+  <view class="more_title">图文详情</view>
+  <view class="more_image">
+    <rich-text class="" nodes="{{goodInfo.goods_introduce}}"></rich-text>
+  </view>
+</view>
+<!-- 底部工具栏 -->
+<view class="btm_tool">
+  <view class="tool_item">
+    <view class="iconfont icon-kefu"></view>
+    <view>客服</view>
+    <button open-type="contact"></button>
+  </view>
+  <view class="tool_item">
+    <view class="iconfont icon-yixianshi-"></view>
+    <view>分享</view>
+    <button open-type="share"></button>
+  </view>
+  <navigator open-type="switchTab" url="/pages/cart/cart" class="tool_item">
+    <view class="iconfont icon-gouwuche"></view>
+    <view>购物车</view>
+  </navigator>
+  <view class="tool_item btn_cart " bindtap="handleCartAdd">加入购物车</view>
+  <view class="tool_item btn_buy">立即购买</view>
+</view>

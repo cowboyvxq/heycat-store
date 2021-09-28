@@ -1,0 +1,127 @@
+<!--pages/detail3/detail3.wxml-->
+<view class="details">
+  <!-- 轮播图 -->
+  <view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="{{interval}}" duration="{{duration}}"
+      class="container">
+      <block wx:for="{{swiperList}}" wx:key="*this" class="top-img">
+        <swiper-item class="swiper-item" bindtap='handlePrevewImage' data-url='{{item.pics_mid}}'>
+          <image src='{{item}}' class="s_image" mode="widthFix"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 价格+销量 -->
+  <view class="detail-wrapper">
+    <view class="price">
+      <text>￥</text>
+      <text class="money">{{detailsData3.detailData3[0].result.normalPrice.nowPrice}}</text>
+    </view>
+    <view class="volume">已售3330</view>
+  </view>
+  <!-- 标题 -->
+  <view class="detail-title">{{detailsData3.detailData3[0].result.itemInfo.title}}</view>
+  <!-- 选择+服务 -->
+  <view class="primary">
+    <view class="social" bindtap="showSocial">
+      <view class="left-text">
+        <text class="dimtx dark">选择</text>
+        <text>尺码 颜色</text>
+      </view>
+      <van-icon name="arrow" class="arrow" />
+    </view>
+    <view class="express dark">免邮费</view>
+    <view class="service" bindtap="showPopup">
+      <text class="dark">服务</text>
+      <view class="item_name">
+        <text wx:for="{{detailsData3.detailData3[0].result.itemServices.services}}" wx:key='index'>{{item.name}}</text>
+      </view>
+      <van-icon name="arrow" class="arrow" />
+    </view>
+  </view>
+  <!-- 商家信息 -->
+  <view class="merchant">
+    <view class="m_left">
+      <image class="shop_logo" src="{{detailsData3.detailData3[0].result.shopInfo.shopLogo}}"></image>
+    </view>
+    <view class="m_right">
+      <view class="shop_name">
+        <text>琪语诗百货</text>
+        <view>
+          <view class="go_shop">
+            <text>进店</text>
+            <van-icon name="arrow" />
+          </view>
+        </view>
+      </view>
+      <view class="shop_info">
+        <view class="describe">
+          <image class="star" src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png">
+          </image>
+          <image class="star" src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png">
+          </image>
+          <image class="star" src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png">
+          </image>
+          <image class="star" src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png">
+          </image>
+          <image class="star" src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png">
+          </image>
+        </view>
+        <view class="online">{{detailsData2.detailData2[0].result.shopInfo.saleDescV2}}</view>
+      </view>
+      <view class="attention">2897人在关注</view>
+    </view>
+  </view>
+  <!-- 图文详情 -->
+  <view class="image-text">
+    <view class="text_title">{{detailImage[0].key}}</view>
+    <view wx:for="{{detailImage[0].list}}" wx:key='index'>
+      <image src="{{item}}" mode='widthFix'></image>
+    </view>
+  </view>
+</view>
+<!-- GoodsAction 商品导航 -->
+<van-goods-action>
+  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="cart-o" text="购物车" />
+  <van-goods-action-button color="#be99ff" class="enter-cart" size='large' text="加入购物车" type="warning" />
+  <van-goods-action-button color="#7232dd" class="go_buy" text="立即购买" bindtap="showSocial" />
+</van-goods-action>
+<!-- 服务弹出层 -->
+<van-popup show="{{ show }}" closeable position="bottom" custom-style="height: 60%" bind:close="onClose">
+  <view class="explain">服务说明</view>
+  <view wx:for="{{services}}" wx:key='index' class="s_cont">
+    <view>{{item.name}}</view>
+    <view class="item_text">{{item.content}}</view>
+  </view>
+</van-popup>
+
+<!-- 商品规格弹出层 -->
+<van-popup show="{{ flag }}" closeable position="bottom" custom-style="height: 75%" bind:close="closePopup">
+  <view class="popup_top">
+    <view class="top_left">
+      <image wx:if="{{picnum === 1}}" src="{{skusList[0].img}}"></image>
+      <image wx:if="{{picnum === 2}}" src="https://s11.mogucdn.com/mlcdn/55cf19/190704_49a9dk502b8jj4il282j501l3ld4l_800x800.jpg"></image>
+    </view>
+    <view class="top_right">
+      <view class="sku_price">￥{{detailsData3.detailData3[0].result.normalPrice.nowPrice}}</view>
+      <view class="repertory">库存：{{detailsData3.detailData3[0].result.skuInfo.totalStock}}件</view>
+    </view>
+  </view>
+  <!-- <view class="colour">
+    <view class="colour_title">颜色</view>
+    <view class="c_container">
+    <text bindtap="changePic1" class="{{picnum === 1 ? 'changecolor' : ''}}">黑色</text>
+    <text bindtap="changePic3" class="{{picnum === 3 ? 'changecolor' : ''}}">卡其色</text>
+    </view>
+  </view> -->
+    <view class="size_title">尺码</view>
+  <view class="m_size">
+    <text bindtap="changePic1" class="items {{picnum === 1 ? 'changecolor' : ''}}">{{skusList[0].style}}</text>
+    <text bindtap="changePic3" class="items {{picnum === 2 ? 'changecolor' : ''}}">转运红</text>
+  </view>
+  <view class="amount"></view>
+
+
+</van-popup>
