@@ -25,21 +25,37 @@ Page({
     skusList:[],
     picnum:1,
     index:1,
-    isTrolley: false
+    isTrolley: false,
+    isLogin:false
   },
-  // 加入购物车
-  joinCart() {
-    console.log(detailsData2);
-    let trolley = wx.getStorageSync('trolley') || [];
-    console.log(trolley);
-    // let itemId = detailsData1.detailData1[0].itemInfo.itemId;
-    // let index = trolley.findIndex(v => v.detailData2[0].itemInfo.itemId=== detailsData2.detailData2[0].itemInfo.itemId);
-    wx.setStorageSync('trolley', [...trolley,detailsData2]);
-    console.log(trolley);
-    // this.setData({
-    //   isTrolley: index !== -1 ? true : false,
-    // })
+   // 加入购物车
+   joinCart() {
+    console.log(333);
   },
+  // 立即购买
+  shoppingNow() {
+    let login = wx.getStorageSync('userInfo');
+    if(login) {
+      console.log(22);
+    } else {
+      this.setData({
+        isLogin:true
+      })
+    }
+  },
+  onCloseLogin() {
+    this.setData({
+        isLogin:false
+    })
+},
+goLogin() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+    this.setData({
+        isLogin:false
+    })
+},
   // 跳转购物车
   goCart() {
     wx.switchTab({

@@ -23,14 +23,39 @@ Page({
     services:[],
     // sku列表
     skusList:[],
-    picnum:1
+    picnum:1,
+    isLogin:false,
+    index:1
   },
+   // 加入购物车
+   joinCart() {
+    console.log(111);
+  },
+  onCloseLogin() {
+    this.setData({
+        isLogin:false
+    })
+},
+goLogin() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+    this.setData({
+        isLogin:false
+    })
+},
+showBottom() {
+  this.setData({
+    flag:true,
+    index:2
+  })
+},
   // 开启弹出层
   showPopup() {
     this.setData({ show: true });
   },
   showSocial() {
-    this.setData({flag:true})
+    this.setData({flag:true,index:1})
   },
   // 关闭弹出层
   onClose() {

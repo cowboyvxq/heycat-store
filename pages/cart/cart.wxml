@@ -60,11 +60,14 @@
           <view class="info_name">{{item.detailData1[0].itemInfo.title}}</view>
           <view class="info_price_wrap">
             <view class="price">¥{{item.detailData1[0].itemInfo.lowNowPrice}}</view>
-            <!-- <view class="num_tool">
-              <view bindtap="numChange" data-id="{{item.goods_id}}" data-opration="{{-1}}">-</view>
-              <view class="num">{{item.num}}</view>
-              <view bindtap="numChange" data-id="{{item.goods_id}}" data-opration="{{1}}">+</view>
-            </view> -->
+            <view class="stepper">
+          <!-- 减号 -->
+          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+          <!-- 数值 -->
+          <input type="number" bindchange="bindManual" value="{{num}}" />
+          <!-- 加号 -->
+          <text class="normal" bindtap="bindPlus">+</text>
+        </view>
           </view>
         </view>
       </view>

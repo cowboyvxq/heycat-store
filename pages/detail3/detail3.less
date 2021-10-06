@@ -323,5 +323,50 @@ button:not([size='mini']) {
       background-color: #ff4a8b;
       color: #fff;
     }
+    .enter_buy {
+      .center();
+      color: #fff;
+      font-size: 36rpx;
+      width: 100%;
+      background: linear-gradient(90deg,#ff6034,#ee0a24);
+    }
+  }
+}
+.login_popup {
+  overflow: hidden;
+  .pupop_content {
+    width: 500rpx;
+    height: 200rpx;
+    border-radius:50%;
+    position: relative;
+    .tips {
+      font-size: 36rpx;
+      color: #666;
+      height: 120rpx;
+      line-height: 120rpx;
+      text-align: center;
+    }
+    .buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-top: solid #ccc 2rpx;
+      view {
+        width: 50%;
+        height: 80rpx;
+        line-height: 80rpx;
+        color: red;
+        text-align: center;
+      }
+      .cancel {
+        border-right: solid #ccc 2rpx;
+      }
+      .go_login {
+        border-left: solid #ccc 2rpx;
+      }
+    }
   }
 }

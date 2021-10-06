@@ -49,7 +49,7 @@
       display: flex;
       padding: 10rpx;
       border-bottom: 1rpx solid #ccc;
-
+      padding-bottom: 20rpx;
       .cart_chk_wrap {
         flex: 1;
         display: flex;
@@ -73,7 +73,7 @@
       }
 
       .cart_info_wrap {
-        flex: 4;
+        flex: 5;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -89,32 +89,41 @@
         .info_price_wrap {
           display: flex;
           justify-content: space-between;
-
           .price {
             color: var(--themeColor);
             font-size: 34rpx;
           }
-
-          .num_tool {
-            display: flex;
-
-            view {
-              width: 55rpx;
-              height: 55rpx;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border: 1rpx solid #ccc;
-            }
-
-            .num {
-              width: 55rpx;
-              height: 55rpx;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+          /*主容器*/
+        .stepper {
+          width: 80px;
+          height: 26px;
+          /*给主容器设一个边框*/
+          border: 1px solid #ccc;
+          border-radius: 6rpx;
+          display: flex;
+          /*加号和减号*/
+          text {
+            width: 50rpx;
+            line-height: 26px;
+            text-align: center;
+            &.normal {
+              color: black;
             }
           }
+         
+          input {
+            width: 40px;
+            height: 26px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 12px;
+            /*给中间的input设置左右边框即可*/
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+          }
+         
+        }
+
         }
       }
     }

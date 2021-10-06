@@ -39,6 +39,7 @@
   display: flex;
   padding: 10rpx;
   border-bottom: 1rpx solid #ccc;
+  padding-bottom: 20rpx;
 }
 .cart .cart_main .cart_item .cart_chk_wrap {
   flex: 1;
@@ -60,7 +61,7 @@
   height: 160rpx;
 }
 .cart .cart_main .cart_item .cart_info_wrap {
-  flex: 4;
+  flex: 5;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -75,28 +76,38 @@
 .cart .cart_main .cart_item .cart_info_wrap .info_price_wrap {
   display: flex;
   justify-content: space-between;
+  /*主容器*/
 }
 .cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .price {
   color: var(--themeColor);
   font-size: 34rpx;
 }
-.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .num_tool {
+.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .stepper {
+  width: 80px;
+  height: 26px;
+  /*给主容器设一个边框*/
+  border: 1px solid #ccc;
+  border-radius: 6rpx;
   display: flex;
+  /*加号和减号*/
 }
-.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .num_tool view {
-  width: 55rpx;
-  height: 55rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1rpx solid #ccc;
+.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .stepper text {
+  width: 50rpx;
+  line-height: 26px;
+  text-align: center;
 }
-.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .num_tool .num {
-  width: 55rpx;
-  height: 55rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .stepper text.normal {
+  color: black;
+}
+.cart .cart_main .cart_item .cart_info_wrap .info_price_wrap .stepper input {
+  width: 40px;
+  height: 26px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  /*给中间的input设置左右边框即可*/
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 }
 .cart .cart_main .tips_content {
   text-align: center;

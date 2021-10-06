@@ -123,7 +123,18 @@
   <view class="go_buy">立即购买</view>
   </view>
   <view class="choice" wx:else>
-  <view class="enter_buy">确认</view>
+  <view class="enter_buy"  bindtap="joinCart">确认</view>
   </view>
-
 </van-popup>
+
+<van-popup show="{{ isLogin }}"  
+custom-style="border-radius:14rpx;"
+ bind:close="onClose" class="login_popup">
+ <view class="pupop_content">
+  <view class="tips">你还没登录，请先登录~</view>
+  <view class="buttons">
+  <view class="cancel" bindtap='onCloseLogin'>取消</view>
+  <view class="go_login" bindtap="goLogin">马上登录</view>
+  </view>
+ </view>
+ </van-popup>
