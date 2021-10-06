@@ -21,7 +21,7 @@ Page({
             isActive: false
         }],
         //商品列表数据
-        goodList: []
+        goodList: [],
     },
     //获取商品列表参数
     goodParams: {
@@ -30,6 +30,7 @@ Page({
         pagenum: 1,
         pagesize: 10
     },
+    GoodInfo:{},
 
     //总页数
     maxPagenum: 1,
@@ -50,12 +51,10 @@ Page({
         this.setData({
             goodList: [...this.data.goodList, ...goodList.goods],
         })
+        console.log(goodList);
         wx.stopPullDownRefresh()
     },
-    //点击添加足迹
-   async footprintHandle() {
-        console.log(333);
-    },
+    
     /**
      * 生命周期函数--监听页面加载
      */
@@ -71,7 +70,12 @@ Page({
         this.goodParams.pagenum = 1,
             this.data.goodList = []
         this.getGoodsList()
+    },
 
+    async addTrack(e) {
+        const goodInfo = await request({ url: "/goods/detail", data: { goods_id } });
+        this.GoodInfo = goodInfo;
+        console.log(goodInfo);
     },
 
     /**

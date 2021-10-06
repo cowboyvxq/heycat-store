@@ -1,6 +1,10 @@
-  <view class="collect_content">
+<!-- <view class="tracks">
+<view class="track_items" wx:for="{{trackList}}" wx:key='goods_id'>{{item.goods_name}}</view>
+</view> -->
+
+<view class="collect_content">
     <view class="collect_main">
-      <navigator wx:for="{{collect}}" wx:key="goods_id" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+      <navigator wx:for="{{trackList}}" wx:key="goods_id" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
         <view class="goods_image">
           <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" />
         </view>

@@ -15,7 +15,20 @@ Page({
         //总价
         totalPrice: 0,
         //总数量
-        totalNum: 0
+        totalNum: 0,
+        trolley:[],
+        count:0
+    },
+    onLoad() {
+        let trolley = wx.getStorageSync('trolley') || [];
+        let cart = wx.getStorageSync('cart') || [];
+        console.log(cart);
+        let mount = wx.getStorageSync('cart').length;
+        let extent = wx.getStorageSync('trolley').length;
+        this.setData({
+            trolley:trolley,
+            count:mount + extent
+        })
     },
     onShow() {
         //收货地址接收
@@ -25,7 +38,8 @@ Page({
             })
             //购物车接收
         const cart = wx.getStorageSync('cart') || [];
-        this.setCart(cart)
+        this.setCart(cart);
+        // 存储订单
     },
     //添加收货地址事件
     async addressChoose() {
@@ -47,7 +61,16 @@ Page({
         const { cart } = this.data;
         const index = cart.findIndex(v => v.goods_id === id);
         cart[index].checked = !cart[index].checked;
-        this.setCart(cart)
+        this.setCart(cart);
+        console.log(id);
+    },
+    changeState(e) {
+        const { id } = e.currentTarget.dataset;
+        const { trolley } = this.data;
+        const index = trolley.findIndex(v => v.detailData1[0].itemInfo.itemId === id);
+        trolley[index].checked = !trolley[index].checked;
+        // this.setCart(trolley);
+        console.log(id);
     },
     // 全选按钮改变
     handleItemAllChange() {
@@ -74,6 +97,7 @@ Page({
     //结算
     async allPlay() {
         const { totalNum, address } = this.data;
+        console.log(totalNum,address);
         if (!address.userName) {
             await showToast('未填联系方式')
         } else if (totalNum === 0) {
@@ -83,13 +107,17 @@ Page({
                 url: '/pages/pay/pay',
             })
         }
-
+    },
+    goCategory() {
+        wx.switchTab({
+          url: '/pages/category/category',
+        })
     },
     //更新购物车数据
     setCart(cart) {
         let totalPrice = 0;
         let totalNum = 0;
-        let allChecked = true
+        let allChecked = true;
         cart.forEach(v => {
             if (v.checked) {
                 totalPrice += v.num * v.goods_price;

@@ -25,18 +25,18 @@
         <view class="his_num">0</view>
         <view class="his_name">关注的商品</view>
       </navigator>
-      <navigator url="">
-        <view class="his_num">0</view>
-        <navigator url='/pages/footprint/footprint' class="his_name">我的足迹</navigator>
+      <navigator url="/pages/tracks/tacks">
+        <view class="his_num">{{trackNumber}}</view>
+        <view class="his_name">我的足迹</view>
       </navigator>
     </view>
     <view class="mian_order_wrap">
       <view class="order_title">我的订单</view>
       <view class="order_content">
-        <navigator url="/pages/order/order?type=1">
+        <view bindtap="allOrder">
           <view class="iconfont icon-ding_dan"></view>
           <view class="order_name">全部订单</view>
-        </navigator>
+        </view>
         <navigator url="/pages/order/order?type=2">
           <view class="iconfont icon-fukuantongzhi"></view>
           <view class="order_name">待付款</view>
@@ -60,6 +60,6 @@
       <navigator url="/pages/feedback/feedback" class="app_info_item">意见反馈</navigator>
       <view class="app_info_item">关于我们</view>
     </view>
-    <view class="main_recommend_wrap">分享应用</view>
+    <view class="main_recommend_wrap" wx:if="{{userInfo.nickName}}" bindtap="loginOut">退出登录</view>
   </view>
 </view>

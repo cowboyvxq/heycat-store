@@ -1,83 +1,80 @@
-/*全部订单*/
-.chanpins{
-  flex: 1;
+.timeout {
+  color: red;
+  text-align: center;
+  font-size: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.user_info {
+  display: flex;
+  padding: 20rpx;
+}
+.user_info .info {
+  flex: 6;
+}
+.user_info .info .info_address {
+  font-size: 30rpx;
+  color: #888;
+}
+.user_info .info .phone {
+  flex: 3;
+  border: solid red 2px;
+}
+.collect_content {
+  background-color: #ccc;
+}
+.collect_content .collect_main navigator {
+  display: flex;
+  padding: 10rpx 0;
+  border-bottom: 2rpx solid #ccc;
+  background-color: #fff;
+}
+.collect_content .collect_main navigator .goods_image {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collect_content .collect_main navigator .goods_image image {
+  width: 70%;
+}
+.collect_content .collect_main navigator .goods_info {
+  flex: 5;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  background:  white;
+  justify-content: space-between;
 }
-.danhao{ 
-  font-size: 12px; color: gray;
-  height: 100rpx; margin-left: 20rpx;
-  border-bottom: 1rpx solid #ECECEC; 
-  background: white;
+.collect_content .collect_main navigator .goods_info .info_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 28rpx;
+}
+.collect_content .collect_main navigator .goods_info .info_price {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}
+.collect_content .collect_main navigator .goods_info .amount {
   display: flex;
-  align-items: center;   
+  justify-content: space-between;
+  padding-right: 20rpx;
 }
-.chanpin{
-  display: flex;
-  padding: 15rpx;
-  height: 130rpx;
-  border-bottom: 1rpx solid #ECECEC; 
-  background: white; 
+.collect_content .collect_main navigator .goods_info .amount .total {
+  color: #5e5b5b;
 }
-.chanpin-img{
+.collect_content .collect_main navigator .goods_info .pay_text {
+  margin-top: 20rpx;
+  padding-right: 20rpx;
+}
+.collect_content .collect_main navigator .goods_info .pay_text .await_pay {
+  float: right;
   width: 120rpx;
-  height: 120rpx;
-}
-.chanpin-info{
-  display: flex;
-  flex-direction:  column;
-  align-items:  flex-start;
-  flex: 1;
-  margin-left: 20rpx;
-}
-.name{
-  font-size: 30rpx; 
-}
-.sales{
-  font-size: 25rpx;
-  color: #ACACAC;text-align: left;
-}
-.price{
-  font-size: 30rpx;
-  color: red;text-align: left;
-}
-.chanpin-num{
   height: 50rpx;
-  display: flex;
-  margin-top: 30rpx;
-  margin-right: 30rpx;
+  font-size: 24rpx;
+  color: #f04;
+  border: solid #f04 2rpx;
   line-height: 50rpx;
-  font-size: 40rpx; 
-}
-.jiesuan{
-  font-size: 13px; color: gray;
-  height: 100rpx; margin-left: 20rpx;
-  border-bottom: 1rpx solid #ECECEC; 
-  background: white;
-  display: flex;
-  align-items: center;   
-}
-.caozuo{
-  height: 100rpx;
-  width: 100%;
-  border-bottom: 1rpx solid #ECECEC; 
-  background: white;
-  display: flex;
-  align-items: center;   
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
-
-.caozuo .cancel {
-  color: #f07bb5;
-  background-color: lightgray;
-}
-
-.caozuo .gopay {
-  width: 240rpx;
-  color: #f01;
-  background-color: lightpink;
+  text-align: center;
+  border-radius: 30rpx;
 }

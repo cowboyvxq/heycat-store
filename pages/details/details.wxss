@@ -143,22 +143,29 @@ button:not([size='mini']) {
   width: 100rpx !important;
 }
 .enter-cart {
-  width: 200rpx !important;
+  width: 220rpx!important;
   flex: 0 !important;
   margin-left: 20rpx;
 }
 .enter-cart .van-goods-action-button--first {
-  width: 200rpx !important;
+  width: 220rpx !important;
   margin: 0 !important;
 }
 .enter-cart .van-goods-action-button--first .van-button--warning {
-  width: 200rpx !important;
+  width: 220rpx !important;
+  background-color: #ffeeee !important;
+  border-radius: 0!important;
+  color: #ff4492 !important;
+  margin-top: 15rpx!important;
 }
 .van-goods-action-button--last {
-  width: 200rpx;
+  width: 220rpx;
 }
 .van-goods-action-button--last .van-button--normal {
-  width: 200rpx !important;
+  width: 220rpx !important;
+  background-color: #ff4a8b !important;
+  border-radius: 0!important;
+  margin-top: 15rpx!important;
 }
 .explain {
   font-size: 36rpx;
@@ -233,4 +240,113 @@ button:not([size='mini']) {
 .van-popup .m_size .items.active {
   color: #ff5777;
   border: solid #ff5777 2rpx;
+}
+.van-popup .choice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+}
+.van-popup .choice .enter_cart {
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: linear-gradient(90deg, #ffd01e, #ff8917);
+  color: #ff5777;
+}
+.van-popup .choice .go_buy {
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: linear-gradient(90deg, #ff6034, #ee0a24);
+  color: #fff;
+}
+.van-popup .choice .enter_buy {
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 36rpx;
+  width: 100%;
+  background: linear-gradient(90deg, #ff6034, #ee0a24);
+}
+.van-popup .login_popup {
+  overflow: hidden;
+}
+.van-popup .login_popup .pupop_content {
+  width: 500rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  position: relative;
+}
+.van-popup .login_popup .pupop_content .tips {
+  font-size: 36rpx;
+  color: #666;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+}
+.van-popup .login_popup .pupop_content .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: solid #ccc 2rpx;
+}
+.van-popup .login_popup .pupop_content .buttons view {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: red;
+  text-align: center;
+}
+.van-popup .login_popup .pupop_content .buttons .cancel {
+  border-right: solid #ccc 2rpx;
+}
+.van-popup .login_popup .pupop_content .buttons .go_login {
+  border-left: solid #ccc 2rpx;
+}
+.login_popup {
+  overflow: hidden;
+}
+.login_popup .pupop_content {
+  width: 500rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  position: relative;
+}
+.login_popup .pupop_content .tips {
+  font-size: 36rpx;
+  color: #666;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+}
+.login_popup .pupop_content .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: solid #ccc 2rpx;
+}
+.login_popup .pupop_content .buttons view {
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: red;
+  text-align: center;
+}
+.login_popup .pupop_content .buttons .cancel {
+  border-right: solid #ccc 2rpx;
+}
+.login_popup .pupop_content .buttons .go_login {
+  border-left: solid #ccc 2rpx;
 }

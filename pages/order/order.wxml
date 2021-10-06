@@ -1,40 +1,29 @@
 <Tabs Tabs="{{Tabs}}" bindtabsChange="tabsItemChange">
-  <scroll-view class="chanpins" scroll-y="true">
-
-<view class="danhao">
-   单号：202108081102 | 时间：20219/10 11:44:19
-</view>   
-<view class="chanpin">
-  <image class="chanpin-img" src="https://s5.mogucdn.com/mlcdn/c45406/201015_88f84ci2c319h5ik6d99elhfig04k_800x800.jpg_640x854.v1cAC.40.webp"></image>
-  <view class="chanpin-info">
-    <view class="name">珀莱雅水动力护肤品套装</view>
-    <view class="sales">月售：11 件 / 库存：121件
+  <view class="user_info">
+    <view class="info">
+      <view class="info_name">{{address.userName}}</view>
+      <view class="info_address">{{address.all}}</view>
     </view>
-    <view class="price">￥：129.00</view>
+    <view class="phone">{{address.telNumber}}</view>
   </view>
-  <view class="chanpin-num">
-    <text class="mytext" hidden=""> 2 件 </text>
-  </view>
-</view>
-<view class="chanpin">
-  <image class="chanpin-img" src="https://s5.mogucdn.com/mlcdn/c45406/200829_6e151df302hd2bk4490212062lild_640x960.jpg_750x1000.v1cAC.81.jpg"></image>
-  <view class="chanpin-info">
-    <view class="name">HFP秋冬季补水保湿亮肤套装</view>
-    <view class="sales">月售：231 件 / 库存：11件
+  <view class="collect_content">
+    <view class="collect_main">
+      <navigator wx:for="{{orders}}" wx:key="goods_id" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+        <view class="goods_image">
+          <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" />
+        </view>
+        <view class="goods_info">
+          <view class="info_name">{{item.goods_name}}</view>
+          <view class="amount">
+          <view class="info_price">¥{{item.goods_price}}</view>
+          <view class="total">x{{item.num}}</view>
+          </view>
+          <view class="pay_text">
+          <view class="await_pay">待支付</view>
+          </view>
+        </view>
+      </navigator>
     </view>
-    <view class="price">￥：329.00</view>
   </view>
-  <view class="chanpin-num">
-    <text class="mytext" hidden=""> 1 件 </text>
-  </view>
-</view>
-
-<view class="jiesuan" >
-   <text>【待付款】共1件商品， 产品金额：¥150 (运费￥6) </text>
-</view>   
-<view class="caozuo">
-     <button  size='mini' class="cancel">取消订单</button>
-    <button  size='mini' class="gopay" >去付款</button>
-</view>   
-</scroll-view>
+<view class="timeout">请在{{minutes}}分{{seconds}}秒内支付订单，否则订单取消</view>
 </Tabs>

@@ -34,7 +34,7 @@
     </view>
     <view class="r_center">
       <view class="star">
-        <image src=""></image>
+        <image src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png"></image>
         <image src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png"></image>
         <image src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png"></image>
         <image src="https://s10.mogucdn.com/mlcdn/c45406/200205_2eg19cl3528hj8ihbc21ci5l0k857_44x44.png"></image>
@@ -54,8 +54,21 @@
     <rich-text class="" nodes="{{goodInfo.goods_introduce}}"></rich-text>
   </view>
 </view>
+<!-- 登录提示框 -->
+<!-- <van-cell title="展示弹出层" is-link bind:click="showPopup" /> -->
+<van-popup show="{{ isLogin }}"  
+custom-style="border-radius:14rpx;"
+ bind:close="onClose" class="login_popup">
+ <view class="pupop_content">
+  <view class="tips">你还没登录，请先登录~</view>
+  <view class="buttons">
+  <view class="cancel" bindtap='onClose'>取消</view>
+  <view class="go_login" bindtap="goLogin">马上登录</view>
+  </view>
+ </view>
+ </van-popup>
 <!-- 底部工具栏 -->
-<view class="btm_tool">
+<!-- <view class="btm_tool">
   <view class="tool_item">
     <view class="iconfont icon-kefu"></view>
     <view>客服</view>
@@ -72,4 +85,12 @@
   </navigator>
   <view class="tool_item btn_cart " bindtap="handleCartAdd">加入购物车</view>
   <view class="tool_item btn_buy">立即购买</view>
-</view>
+</view> -->
+
+<van-goods-action>
+  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="cart-o" bindtap="goCart" info='{{count}}' text="购物车" />
+  <van-goods-action-button color="#be99ff" class="enter-cart" size='large'  bindtap="handleCartAdd" text="加入购物车" type="warning" />
+  <van-goods-action-button color="#7232dd" class="go_buy" text="立即购买" bindtap="showSocial" />
+</van-goods-action>

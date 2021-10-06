@@ -46,6 +46,7 @@ Page({
         this.setData({
             goods
         })
+        console.log(goods);
     },
     //点击取消按钮
     handleCancel() {

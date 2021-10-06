@@ -1,4 +1,7 @@
 button {
     width: 80%;
-    margin-top: 20rpx;
+    margin-top: 160rpx;
+    color: #fff!important;
+    background-color: #f09887!important;
+    border: none!important;
 }

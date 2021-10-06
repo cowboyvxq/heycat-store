@@ -1,18 +1,22 @@
-// pages/footprint/footprint.js
+// pages/tracks/tacks.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    footprint:[]
+    trackList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let track = wx.getStorageSync('track');
+    this.setData({
+      trackList:track,
+    })
+    console.log(track);
   },
 
   /**
@@ -26,8 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    const footprint = wx.getStorageSync('footprint');
-    this.setData({ footprint })
+
   },
 
   /**

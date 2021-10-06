@@ -24,7 +24,7 @@
   <view class="detail-title">{{detailsData2.detailData2[0].result.itemInfo.title}}</view>
   <!-- 选择+服务 -->
   <view class="primary">
-    <view class="social" bindtap="showSocial">
+    <view class="social" bindtap="showBottom">
       <view class="left-text">
         <text class="dimtx dark">选择</text>
         <text>尺码 颜色</text>
@@ -85,8 +85,8 @@
 <van-goods-action>
   <van-goods-action-icon icon="shop-o" text="店铺" />
   <van-goods-action-icon icon="chat-o" text="客服" />
-  <van-goods-action-icon icon="cart-o" text="购物车" />
-  <van-goods-action-button color="#be99ff" class="enter-cart" size='large' text="加入购物车" type="warning" />
+  <van-goods-action-icon icon="cart-o" bindtap="goCart" text="购物车" />
+  <van-goods-action-button color="#be99ff" class="enter-cart" size='large' text="加入购物车" bindtap="showSocial" type="warning" />
   <van-goods-action-button color="#7232dd" class="go_buy" text="立即购买" bindtap="showSocial" />
 </van-goods-action>
 <!-- 服务弹出层 -->
@@ -110,19 +110,20 @@
       <view class="repertory">库存：{{detailsData2.detailData2[0].result.skuInfo.totalStock}}件</view>
     </view>
   </view>
-  <!-- <view class="colour">
-    <view class="colour_title">颜色</view>
-    <view class="c_container">
-    <text bindtap="changePic1" class="{{picnum === 1 ? 'changecolor' : ''}}">黑色</text>
-    <text bindtap="changePic2" class="{{picnum === 2 ? 'changecolor' : ''}}">卡其色</text>
-    </view>
-  </view> -->
+
     <view class="size_title">尺码</view>
   <view class="m_size">
     <text bindtap="changePic1" class="items {{picnum === 1 ? 'changecolor' : ''}}">{{skusList[0].style}}</text>
     <text bindtap="changePic2" class="items {{picnum === 2 ? 'changecolor' : ''}}">{{skusList[1].style}}</text>
   </view>
+  
   <view class="amount"></view>
-
+ <view class="choice" wx:if='{{index === 2}}'>
+  <view class="enter_cart" bindtap="joinCart">加入购物车</view>
+  <view class="go_buy">立即购买</view>
+  </view>
+  <view class="choice" wx:else>
+  <view class="enter_buy">确认</view>
+  </view>
 
 </van-popup>

@@ -55,6 +55,11 @@ Page({
         url: '/pages/details2/details2',
       })
     },
+    goDetails3() {
+      wx.navigateTo({
+        url: '/pages/detail3/detail3',
+      })
+    },
   /**
    * 生命周期函数--监听页面加载
    */

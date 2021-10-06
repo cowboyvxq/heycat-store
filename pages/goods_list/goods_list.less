@@ -1,13 +1,13 @@
 navigator {
   display: flex;
   padding: 10rpx 0;
-  border-bottom: 2rpx solid #ccc;
+  border-bottom: 2rpx solid rgb(236, 235, 235);
   .goods_image {
     flex: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    image{
+    .image{
       width: 70%;
     }
   }
@@ -16,6 +16,7 @@ navigator {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 20rpx;
     .info_name{
       display: -webkit-box;
       overflow: hidden;
@@ -23,9 +24,22 @@ navigator {
       -webkit-line-clamp:2;
       font-size: 28rpx;
     }
-    .info_price{
-      color: var(--themeColor);
-      font-size: 32rpx;
+    .buy_number {
+      color: #666;
+      font-size: 24rpx;
+    }
+    .list_info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .info_price{
+        color: var(--themeColor);
+        font-size: 32rpx;
+      }
+      .sales {
+        font-size: 24rpx;
+        color: rgb(153, 150, 150);
+      }
     }
   }
 }

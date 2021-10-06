@@ -23,7 +23,7 @@ page{
       .info_name{
         text-align: center;
         margin-top: 20rpx;
-        color:#fff;
+        color:rgb(76, 208, 248);
         font-size: 38rpx;
         font-weight: bold;
       }
@@ -32,7 +32,7 @@ page{
   .user_login{
     position: relative;
     height: 70vw;
-   background-color: rgb(150, 191, 224);
+   background-color: rgb(162, 252, 162);
 
     navigator{
       position:absolute;
@@ -50,6 +50,7 @@ page{
 }
 .user_content {
   position: relative;
+  border-radius: 10rpx;
   .user_main {
     position: absolute;
     left: 50%;
@@ -57,13 +58,15 @@ page{
     top: -30rpx;
     width: 90%;
     padding-bottom: 80rpx;
-    color: #666;
+    color: rgb(131, 130, 130);
+    font-size: 26rpx;
     .main_his_wrap {
       display: flex;
       text-align: center;
       background-color: #fff;
       padding: 20rpx;
       font-size: 28rpx;
+      border-radius: 10rpx;
       navigator {
         flex: 1;
         .his_num {
@@ -74,9 +77,12 @@ page{
     .mian_order_wrap {
       margin-top: 30rpx;
       background-color: #fff;
+      border-radius: 10rpx;
       .order_title{
-        padding: 20rpx ;
+        padding: 15rpx 20rpx ;
         border-bottom: 2rpx solid #edece8;
+        color: #333;
+        font-size: 32rpx;
       }
       .order_content {
         padding: 20rpx ;
@@ -89,18 +95,21 @@ page{
           }
         }
       }
-
     }
     .main_address_wrap {
       margin-top: 30rpx;
       background-color: #fff;
-      padding: 20rpx ;
+      padding: 20rpx;
+      border-radius: 10rpx;
+      font-size: 30rpx;
     }
     .main_info_wrap {
       margin-top: 30rpx;
       background-color: #fff;
+      border-radius: 10rpx;
+      font-size: 30rpx;
       .app_info_item{
-        padding: 20rpx ;
+        padding: 20rpx;
         border-bottom: 1rpx solid #ccc;
       }
       .app_info_contact{
@@ -110,8 +119,10 @@ page{
     }
     .main_recommend_wrap {
       margin-top: 30rpx;
-      background-color: #fff;
+      background-color: rgb(248, 204, 204);
       padding: 20rpx ;
+      text-align: center;
+      color: #f04;
     }
   }
 }

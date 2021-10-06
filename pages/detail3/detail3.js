@@ -93,6 +93,12 @@ Page({
         skusList:detailsData3.detailData3[0].result.skuInfo.skus,
       })
   },
+  // 跳转购物车
+  goCart() {
+    wx.switchTab({
+      url: '/pages/cart/cart',
+    }) 
+  },
 
   // 点击轮博图放大预览
   handlePrevewImage(e) {

@@ -18,12 +18,13 @@
     "pages/seckill/seckill",
     "components/ProductList/ProductList",
     "pages/supermarket/supermarket",
-    "pages/footprint/footprint",
     "pages/details/details",
     "components/sku/index",
     "components/slider/slider",
     "pages/details2/details2",
-    "pages/detail3/detail3"
+    "pages/detail3/detail3",
+    "pages/tracks/tacks",
+    "pages/payment/payment"
   ],
   "window": {
     "backgroundTextStyle": "light",

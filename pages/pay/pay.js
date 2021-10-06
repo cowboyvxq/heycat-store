@@ -14,7 +14,9 @@ Page({
         //总价
         totalPrice: 0,
         //总数量
-        totalNum: 0
+        totalNum: 0,
+        // 立即购买
+        
     },
     onShow() {
         //收货地址接收
@@ -48,6 +50,11 @@ Page({
                 const order_price = this.data.totalPrice;
                 const consignee_add = this.data.address.all;
                 const cart = this.data.cart
+                // console.log(cart);
+                const order =  wx.getStorageSync('cart') || [];
+                console.log(order);
+                wx.setStorageSync('order', order);
+              console.log(cart);
                 let goods = [];
                 cart.forEach(v => goods.push({
                     goods_id: v.goods_id,

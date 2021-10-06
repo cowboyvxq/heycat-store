@@ -23,14 +23,44 @@ Page({
     services:[],
     // sku列表
     skusList:[],
-    picnum:1
+    picnum:1,
+    index:1,
+    isTrolley: false
+  },
+  // 加入购物车
+  joinCart() {
+    console.log(detailsData2);
+    let trolley = wx.getStorageSync('trolley') || [];
+    console.log(trolley);
+    // let itemId = detailsData1.detailData1[0].itemInfo.itemId;
+    // let index = trolley.findIndex(v => v.detailData2[0].itemInfo.itemId=== detailsData2.detailData2[0].itemInfo.itemId);
+    wx.setStorageSync('trolley', [...trolley,detailsData2]);
+    console.log(trolley);
+    // this.setData({
+    //   isTrolley: index !== -1 ? true : false,
+    // })
+  },
+  // 跳转购物车
+  goCart() {
+    wx.switchTab({
+      url: '/pages/cart/cart',
+    }) 
   },
   // 开启弹出层
   showPopup() {
     this.setData({ show: true });
   },
   showSocial() {
-    this.setData({flag:true})
+    this.setData({
+      flag:true,
+      index:1
+    })
+  },
+  showBottom() {
+    this.setData({
+      flag:true,
+      index:2
+    })
   },
   // 关闭弹出层
   onClose() {
@@ -80,7 +110,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(detailsData2.detailData2[0].result.skuInfo.skus);
       this.setData({
         detailsData2:detailsData2,
         // 轮播图
@@ -91,7 +120,6 @@ Page({
         services:detailsData2.detailData2[0].result.itemServices.services,
         // sku
         skusList:detailsData2.detailData2[0].result.skuInfo.skus,
-
       })
   },
 

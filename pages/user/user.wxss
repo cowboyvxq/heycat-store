@@ -26,14 +26,14 @@ page {
 .user_info .user_info_wrap .info .info_name {
   text-align: center;
   margin-top: 20rpx;
-  color: #fff;
+  color: #4cd0f8;
   font-size: 38rpx;
   font-weight: bold;
 }
 .user_info .user_login {
   position: relative;
   height: 70vw;
-  background-color: #96bfe0;
+  background-color: #a2fca2;
 }
 .user_info .user_login navigator {
   position: absolute;
@@ -49,6 +49,7 @@ page {
 }
 .user_content {
   position: relative;
+  border-radius: 10rpx;
 }
 .user_content .user_main {
   position: absolute;
@@ -57,7 +58,8 @@ page {
   top: -30rpx;
   width: 90%;
   padding-bottom: 80rpx;
-  color: #666;
+  color: #838282;
+  font-size: 26rpx;
 }
 .user_content .user_main .main_his_wrap {
   display: flex;
@@ -65,6 +67,7 @@ page {
   background-color: #fff;
   padding: 20rpx;
   font-size: 28rpx;
+  border-radius: 10rpx;
 }
 .user_content .user_main .main_his_wrap navigator {
   flex: 1;
@@ -75,10 +78,13 @@ page {
 .user_content .user_main .mian_order_wrap {
   margin-top: 30rpx;
   background-color: #fff;
+  border-radius: 10rpx;
 }
 .user_content .user_main .mian_order_wrap .order_title {
-  padding: 20rpx ;
+  padding: 15rpx 20rpx ;
   border-bottom: 2rpx solid #edece8;
+  color: #333;
+  font-size: 32rpx;
 }
 .user_content .user_main .mian_order_wrap .order_content {
   padding: 20rpx ;
@@ -94,14 +100,18 @@ page {
 .user_content .user_main .main_address_wrap {
   margin-top: 30rpx;
   background-color: #fff;
-  padding: 20rpx ;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
 }
 .user_content .user_main .main_info_wrap {
   margin-top: 30rpx;
   background-color: #fff;
+  border-radius: 10rpx;
+  font-size: 30rpx;
 }
 .user_content .user_main .main_info_wrap .app_info_item {
-  padding: 20rpx ;
+  padding: 20rpx;
   border-bottom: 1rpx solid #ccc;
 }
 .user_content .user_main .main_info_wrap .app_info_contact {
@@ -110,6 +120,8 @@ page {
 }
 .user_content .user_main .main_recommend_wrap {
   margin-top: 30rpx;
-  background-color: #fff;
+  background-color: #f8cccc;
   padding: 20rpx ;
+  text-align: center;
+  color: #f04;
 }

@@ -131,12 +131,6 @@
           }
         },
         {
-          "name": "pages/footprint/footprint",
-          "pathName": "pages/footprint/footprint",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "components/sku/sku",
           "pathName": "components/sku/sku",
           "query": "",
@@ -175,6 +169,18 @@
         {
           "name": "pages/detail3/detail3",
           "pathName": "pages/detail3/detail3",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/user",
+          "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tracks/tacks",
+          "pathName": "pages/tracks/tacks",
           "query": "",
           "scene": null
         }

@@ -2,15 +2,19 @@
 <Tabs Tabs="{{Tabs}}" bindtabsChange="tabsItemChange">
   <block wx:if="{{Tabs[0].isActive===true}}">
     <navigator wx:for="{{goodList}}" 
-    bindtap="footprintHandle"
-    wx:key="goods_id" url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
+    wx:key="goods_id" 
+    url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
     >
       <view class="goods_image">
         <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" />
       </view>
       <view class="goods_info">
         <view class="info_name">{{item.goods_name}}</view>
+        <view class="buy_number">{{item.goods_price + item.upd_time % 40 + 30}}+人付款</view>
+        <view class="list_info">
         <view class="info_price">¥{{item.goods_price}}</view>
+        <view class="sales">月销{{item.goods_price}}</view>
+        </view>
       </view>
     </navigator>
   </block>

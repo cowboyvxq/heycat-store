@@ -1,4 +1,4 @@
-/* pages/footprint/footprint.wxss */
+/* pages/tracks/tacks.wxss */
 .collect_content {
   background-color: #ccc;
 }

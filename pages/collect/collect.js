@@ -1,4 +1,3 @@
-// pages/collect/collect.js
 Page({
 
     /**
@@ -34,12 +33,12 @@ Page({
         this.setData({ collect })
     },
     //Tabs切换
-    tabsItemChange(e) {
-        const id = e.detail.id;
-        const Tabs = this.data.Tabs;
-        Tabs.forEach((v, i) => i === id ? v.isActive = true : v.isActive = false)
-        this.setData({
-            Tabs
-        })
-    }
+    // tabsItemChange(e) {
+    //     const id = e.detail.id;
+    //     const Tabs = this.data.Tabs;
+    //     Tabs.forEach((v, i) => i === id ? v.isActive = true : v.isActive = false)
+    //     this.setData({
+    //         Tabs
+    //     })
+    // }
 })

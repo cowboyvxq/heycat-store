@@ -1,0 +1,30 @@
+<!--pages/payment/payment.wxml-->
+<view class="payment">
+  <view class="content">
+    <view class="photo">
+      <image src="{{goodsData.goods_big_logo}}"></image>
+    </view>
+    <view class="text">
+      <view class="title">{{goodsData.goods_name}}</view>
+      <view class="bottom">
+        <view class="price">￥{{goodsData.goods_price}}</view>
+        <!-- <view class="count">x1</view> -->
+        <view class="stepper">
+          <!-- 减号 -->
+          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+          <!-- 数值 -->
+          <input type="number" bindchange="bindManual" value="{{num}}" />
+          <!-- 加号 -->
+          <text class="normal" bindtap="bindPlus">+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="total">
+    <view class="sum">
+      <text class="add_up">合计：￥</text>
+      <text class="money">{{goodsData.goods_price * num}}</text>
+    </view>
+    <view class="go_pay" bindtap="createOrder">付款</view>
+  </view>
+</view>

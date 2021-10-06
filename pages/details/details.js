@@ -23,7 +23,71 @@ Page({
     services:[],
     // sku列表
     skusList:[],
-    picnum:1
+    picnum:1,
+    index:1,
+    count:wx.getStorageSync('cart').length,
+    isTrolley: false,
+    count:0,
+    isLogin:false
+  },
+  // 加入购物车
+  joinCart() {
+    let login = wx.getStorageSync('userInfo');
+    if(login) {
+      let trolley = wx.getStorageSync('trolley') || [];
+      // let itemId = detailsData1.detailData1[0].itemInfo.itemId;
+      let index = trolley.findIndex(v => v.detailData1[0].itemInfo.itemId=== detailsData1.detailData1[0].itemInfo.itemId);
+      console.log(index);
+      // console.log(detailsData1.detailData1[0].itemInfo.itemId);
+      if(index !== 0) {
+        wx.setStorageSync('trolley', [...trolley,detailsData1]);
+        let mount = wx.getStorageSync('cart').length;
+      let extent = wx.getStorageSync('trolley').length;
+      this.setData({
+      // console.log(detailsData1.detailData1[0].itemInfo.itemId);
+        count:mount + extent,
+        flag:false
+      })
+      } else {
+        this.setData ({
+        flag:false
+        })
+      }
+    } else {
+      this.setData({
+        isLogin:true
+      })
+    }
+  },
+  // 立即购买
+  shoppingNow() {
+    let login = wx.getStorageSync('userInfo');
+    if(login) {
+      console.log(22);
+    } else {
+      this.setData({
+        isLogin:true
+      })
+    }
+  },
+  onCloseLogin() {
+    this.setData({
+        isLogin:false
+    })
+},
+goLogin() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+    this.setData({
+        isLogin:false
+    })
+},
+  // 跳转购物车
+  goCart() {
+    wx.switchTab({
+      url: '/pages/cart/cart',
+    }) 
   },
   // 页面以及类名切换
   toggleClass(e) {
@@ -37,7 +101,16 @@ Page({
     this.setData({ show: true });
   },
   showSocial() {
-    this.setData({flag:true})
+    this.setData({
+      flag:true,
+      index:1 
+    })
+  },
+  showBottom() {
+    this.setData({
+      flag:true,
+      index:2
+    })
   },
   // 关闭弹出层
   onClose() {
@@ -87,7 +160,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let mount = wx.getStorageSync('cart').length;
+    let extent = wx.getStorageSync('trolley').length;
       this.setData({
+        count:mount + extent,
         detailsData1:detailsData1,
         // 轮播图
         swiperList:detailsData1.detailData1[0].topImages,
@@ -99,7 +175,7 @@ Page({
         skusList:detailsData1.detailData1[0].skuInfo.skus,
 
       })
-      console.log(detailsData1.detailData1[0].skuInfo.skus);
+      // console.log(detailsData1.detailData1[0].topImages[0]);
   },
 
   // 点击轮博图放大预览

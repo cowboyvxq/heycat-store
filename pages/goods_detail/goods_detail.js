@@ -9,17 +9,33 @@ Page({
         //详情数据  
         goodInfo: {},
         //是否被保存
-        isCollect: false
+        isCollect: false,
+        // 登录提示框
+        isLogin:false,
+        isTrack:false,
+        count:0
+        // trackList:[]
     },
     GoodInfo: {},
+    onLoad() {
+        let mount = wx.getStorageSync('cart').length;
+        let extent = wx.getStorageSync('trolley').length;
+        // console.log(mount + extent);
+        this.setData({
+            count:mount + extent
+        })
+    },
     //获取详情数据
     async getGoodInfo(goods_id) {
         const goodInfo = await request({ url: "/goods/detail", data: { goods_id } });
         this.GoodInfo = goodInfo;
-        console.log(goodInfo);
+        // 足迹信息
+       let track = wx.getStorageSync("track") || [];
+        let sub = track.findIndex(v => v.goods_id === this.GoodInfo.goods_id);
             //获取收藏信息
+         console.log(goodInfo);
         let collect = wx.getStorageSync("collect") || [];
-        let index = collect.findIndex(v => v.goods_id === this.GoodInfo.goods_id)
+        let index = collect.findIndex(v => v.goods_id === this.GoodInfo.goods_id);
         this.setData({
             goodInfo: {
                 goods_name: goodInfo.goods_name,
@@ -30,44 +46,103 @@ Page({
                 pics: goodInfo.pics,
                 volume:goods_id
             },
-            isCollect: index !== -1 ? true : false
+            isCollect: index !== -1 ? true : false,
+            isTrack: sub !== -1 ? true : false
         })
+        console.log(sub === -1);
+        if(sub === -1) {
+         wx.setStorageSync('track', [...track,goodInfo]);
+        }
     },
     //添加购物车
     handleCartAdd() {
-        let cart = wx.getStorageSync("cart") || [];
-        let index = cart.findIndex(v => v.goods_id === this.GoodInfo.goods_id)
-        if (index === -1) {
-            this.GoodInfo.num = 1
-            this.GoodInfo.checked = true
-            cart.push(this.GoodInfo)
+        let login = wx.getStorageSync('userInfo');
+        if(login) {
+            let cart = wx.getStorageSync("cart") || [];
+            let index = cart.findIndex(v => v.goods_id === this.GoodInfo.goods_id);
+            if (index === -1) {
+                this.GoodInfo.num = 1
+                cart.push(this.GoodInfo)
+            } else {
+                cart[index].num++
+            }
+            wx.setStorageSync('cart', cart)
+            wx.showToast({
+                title: '成功加入购物车',
+                icon: 'success',
+                // true 防止用户 手抖 疯狂点击按钮 
+                mask: true
+            })
+            let mount = wx.getStorageSync('cart').length;
+        let extent = wx.getStorageSync('trolley').length;
+            this.setData({
+                count:mount + extent
+            })
         } else {
-            cart[index].num++
+            this.setData({
+                isLogin:true
+            })
         }
-        wx.setStorageSync('cart', cart)
-        wx.showToast({
-            title: '成功加入购物车',
-            icon: 'success',
-            // true 防止用户 手抖 疯狂点击按钮 
-            mask: true
+    },
+    // 跳转购物车
+    goCart() {
+        this.onLoad();
+        wx.switchTab({
+          url: '/pages/cart/cart',
         })
     },
+    onClose() {
+        this.setData({
+            isLogin:false
+        })
+    },
+    goLogin() {
+        wx.navigateTo({
+          url: '/pages/login/login',
+        })
+        this.setData({
+            isLogin:false
+        })
+    },
+  async showSocial() {
+        let login = wx.getStorageSync('userInfo');
+        if(login) {
+        let goods = wx.getStorageSync('goods') || [];
+        wx.setStorageSync('goods', this.GoodInfo);
+            wx.navigateTo({
+              url: '/pages/payment/payment',
+            })
+        } else {
+            //  console.log(this.GoodInfo);
+          this.setData({
+            isLogin:true
+          })
+        }
+    },
+
     //点击收藏
     collectHandle() {
-        let collect = wx.getStorageSync("collect") || [];
-        let isCollect = false
-        let index = collect.findIndex(v => v.goods_id === this.GoodInfo.goods_id)
-        if (index === -1) {
-            collect.push(
-                this.GoodInfo
-            );
-            isCollect = true
+        let login = wx.getStorageSync('userInfo');
+        if(login) {
+            let collect = wx.getStorageSync("collect") || [];
+            let isCollect = false
+            let index = collect.findIndex(v => v.goods_id === this.GoodInfo.goods_id)
+            if (index === -1) {
+                collect.push(
+                    this.GoodInfo
+                );
+                isCollect = true
+            } else {
+                collect.splice(index, 1)
+                isCollect = false
+            }
+            wx.setStorageSync("collect", collect)
+            this.setData({ isCollect })
         } else {
-            collect.splice(index, 1)
-            isCollect = false
+            this.setData({
+                isLogin:true
+            })
         }
-        wx.setStorageSync("collect", collect)
-        this.setData({ isCollect })
     },
     // 点击轮博图放大预览
     handlePrevewImage(e) {
@@ -77,7 +152,6 @@ Page({
         current:currents,
           urls: urls,
         })
-        console.log( this.GoodInfo.pics);
     },
     /**
      * 生命周期函数--监听页面加载

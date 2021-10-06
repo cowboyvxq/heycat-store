@@ -3,6 +3,10 @@
     button {
       width: 50%;
       margin-top: 40rpx;
+      border: none!important;
+      color: #fff!important;
+      background-color: rgb(235, 134, 181);
+      margin-bottom: 30rpx;
     }
   }
 
@@ -62,6 +66,10 @@
         image {
           width: 80%;
         }
+        .cart_pic {
+          width: 145rpx;
+          height: 160rpx;
+        }
       }
 
       .cart_info_wrap {
@@ -110,6 +118,24 @@
         }
       }
     }
+    .tips_content {
+      text-align: center;
+      margin-top: 50rpx;
+      .cart-img {
+        width: 450rpx;
+      }
+      .shopping {
+        height: 70rpx;
+        line-height: 65rpx;
+        margin: 100rpx auto;
+        font-size: 30rpx;
+        width: 420rpx;
+        border: solid rgb(199, 197, 197) 2px;
+        color: rgb(185, 184, 184);
+        border-radius: 10rpx;
+        font-weight: 600;
+      }
+    }
   }
 }
 
@@ -123,7 +149,7 @@
   height: 90rpx;
   background-color: #fff;
   border-top: 2rpx solid #ccc;
-
+ align-items: center;
   .all_chk_warp {
     flex: 2;
     display: flex;
@@ -147,16 +173,22 @@
     view {
       font-size: 26rpx;
     }
+    .freight {
+      font-size: 24rpx;
+      color: #666;
+    }
   }
 
   .all_sum_warp {
-    flex: 3;
-    background-color: var(--themeColor);
+    flex: 2;
+    height: 70rpx;
+    background: linear-gradient(90deg,#ff6034,#ee0a24);
     color: #fff;
-    font-size: 34rpx;
-    font-weight: bold;
+    font-size: 26rpx;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 35rpx;
+    margin-right: 20rpx;
   }
 }
